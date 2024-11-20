@@ -1,11 +1,5 @@
 /* Fonts */
 
-/* @font-face {
-  font-family: "FiraCodeRegular";
-  src: url("../fonts/FiraCode/FiraCode-Regular.ttf") format("truetype");
-  font-weight: normal;
-} */
-
 @font-face {
   font-family: "InconsolataRegular";
   src: url("../fonts/Inconsolata/Inconsolata-Regular.ttf") format("truetype");
