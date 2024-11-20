@@ -74,6 +74,10 @@ i:hover {
 /* Mobile Tech Stack Grid */
 
 @media (max-width: 600px) {
+  h1 {
+    font-size: 35px;
+  }
+
   .tech-stack-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
