@@ -6,6 +6,15 @@
   font-weight: normal;
 }
 
+/* Colors */
+
+:root {
+  --ultra-light-gray: #dee2e6;
+  --light-gray: #adb5bd;
+  --medium-gray: #696969;
+  --dark-gray: #495057;
+}
+
 /* General */
 
 body {
@@ -28,7 +37,7 @@ i {
 }
 
 i:hover {
-  color: #696969;
+  color: var(--medium-gray);
 }
 
 /* Tech Stack Grid */
@@ -44,14 +53,14 @@ i:hover {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  border: 3px solid #dee2e6;
+  border: 3px solid var(--ultra-light-gray);
   border-radius: 8px;
   transition: transform 0.3s;
 }
 
 .tech-tile:hover {
   transform: scale(1.05);
-  border-color: #696969;
+  border-color: var(--light-gray);
 }
 
 .tech-tile img {
@@ -64,11 +73,15 @@ i:hover {
 }
 
 [data-bs-theme="dark"] .tech-tile {
-  border-color: #495057;
+  border-color: var(--dark-gray);
 }
 
 [data-bs-theme="dark"] .tech-tile:hover {
-  border-color: #696969;
+  border-color: var(--medium-gray);
+}
+
+[data-bs-theme="dark"] i:hover {
+  color: var(--light-gray);
 }
 
 /* Mobile Tech Stack Grid */
