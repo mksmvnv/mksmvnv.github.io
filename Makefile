@@ -10,20 +10,21 @@ lint:
 	@npx prettier --write $(FORMATS)
 
 build:
-	@docker build -t $(IMAGE) .
+	@docker build -t $(IMAGE_NAME) .
 
 run:
-	@docker run -d --name $(IMAGE) -p 80:80 -p 443:443 \
-	-v $$PWD/ssl:$(SSL) --restart unless-stopped $(IMAGE)
+	@docker run -d --name $(IMAGE_NAME) -p 80:80 -p 443:443 \
+	-v $$PWD/ssl:$(SSL_PATH) --restart unless-stopped $(IMAGE_NAME)
 
 stop:
-	@docker stop $(IMAGE)
+	@docker stop $(IMAGE_NAME)
 
 restart:
-	@docker restart $(IMAGE)
+	@docker restart $(IMAGE_NAME)
 
 logs:
-	@docker logs -f $(IMAGE)
+	@docker logs -f $(IMAGE_NAME)
 
 clean:
-	@docker rm -f $(IMAGE)
+	@docker rm -f $(IMAGE_NAME)
+	@docker rmi $(IMAGE_NAME)
