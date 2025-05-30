@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Python",
+        "img": "media/python.png",
+        "alt": "python"
+    },
+    {
+        "name": "FastAPI",
+        "img": "media/fastapi.png",
+        "alt": "fastapi"
+    },
+    {
+        "name": "Django",
+        "img": "media/django.png",
+        "alt": "django"
+    },
+    {
+        "name": "AIOgram",
+        "img": "media/aiogram.png",
+        "alt": "aiogram"
+    },
+    {
+        "name": "PostgreSQL",
+        "img": "media/pgsql.png",
+        "alt": "pgsql"
+    },
+    {
+        "name": "SQLAlchemy",
+        "img": "media/sqla.png",
+        "alt": "sqla"
+    },
+    {
+        "name": "Celery",
+        "img": "media/celery.png",
+        "alt": "celery"
+    },
+    {
+        "name": "Redis",
+        "img": "media/redis.png",
+        "alt": "redis"
+    },
+    {
+        "name": "Nginx",
+        "img": "media/nginx.png",
+        "alt": "nginx"
+    },
+    {
+        "name": "Docker",
+        "img": "media/docker.png",
+        "alt": "docker"
+    },
+    {
+        "name": "CI/CD",
+        "img": "media/cicd.png",
+        "alt": "cicd"
+    },
+    {
+        "name": "Git",
+        "img": "media/git.png",
+        "alt": "git"
+    },
+    {
+        "name": "Linux",
+        "img": "media/linux.png",
+        "alt": "linux"
+    },
+    {
+        "name": "Go",
+        "img": "media/golang.png",
+        "alt": "go"
+    },
+    {
+        "name": "C/C++",
+        "img": "media/c.png",
+        "alt": "c"
+    },
+    {
+        "name": "JS",
+        "img": "media/js.png",
+        "alt": "js"
+    },
+    {
+        "name": "HTML",
+        "img": "media/html.png",
+        "alt": "html"
+    },
+    {
+        "name": "CSS",
+        "img": "media/css.png",
+        "alt": "css"
+    },
+    {
+        "name": "Bootstrap",
+        "img": "media/bootstrap.png",
+        "alt": "bootstrap"
+    },
+    {
+        "name": "Testing",
+        "img": "media/pytest.png",
+        "alt": "testing"
+    }
+]
