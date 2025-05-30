@@ -44,6 +44,19 @@
       <h5>
         <i id="copyText" style="cursor: pointer">@mksmvnv</i>
       </h5>
+      <div
+        id="copyToast"
+        class="toast align-items-center position-fixed bottom-0 end-0 m-3"
+        role="alert"
+      >
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-check-circle-fill text-success me-2"></i>
+            Copied!
+          </div>
+          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+      </div>
       <div class="row justify-content-center m-3">
         <h1>Maksim Ivanov</h1>
         <h4>Python Developer</h4>
@@ -53,86 +66,7 @@
       <div class="m-5">
         <h4 class="mb-4">#TechStack</h4>
         <div class="tech-stack-grid">
-          <div class="tech-tile">
-            <img src="media/python.png" alt="python" />
-            <span>Python</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/fastapi.png" alt="fastapi" />
-            <span>FastAPI</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/django.png" alt="django" />
-            <span>Django</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/aiogram.png" alt="AIOgram" />
-            <span>AIOgram</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/pgsql.png" alt="PostgreSQL" />
-            <span>PostgreSQL</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/sqla.png" alt="SQLAlchemy" />
-            <span>SQLAlchemy</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/celery.png" alt="Celery" />
-            <span>Celery</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/redis.png" alt="Redis" />
-            <span>Redis</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/nginx.png" alt="Nginx" />
-            <span>Nginx</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/docker.png" alt="Docker" />
-            <span>Docker</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/cicd.png" alt="CI/CD" />
-            <span>CI/CD</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/git.png" alt="Git" />
-            <span>Git</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/linux.png" alt="Linux" />
-            <span>Linux</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/golang.png" alt="Golang" />
-            <span>Go</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/c.png" alt="C" />
-            <span>C/C++</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/js.png" alt="JS" />
-            <span>JS</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/html.png" alt="HTML" />
-            <span>HTML</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/css.png" alt="CSS" />
-            <span>CSS</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/bootstrap.png" alt="Bootstrap" />
-            <span>Bootstrap</span>
-          </div>
-          <div class="tech-tile">
-            <img src="media/pytest.png" alt="Testing" />
-            <span>Testing</span>
-          </div>
+          <div class="tech-stack-loader">Loading...</div>
         </div>
       </div>
       <!-- Links -->
@@ -171,8 +105,10 @@
     </main>
 
     <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="static/js/theme.js" defer></script>
     <script src="static/js/copy.js" defer></script>
+    <script src="static/js/techstack.js" defer></script>
     <script src="static/js/focus.js" defer></script>
   </body>
 </html>
