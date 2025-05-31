@@ -1,6 +1,6 @@
 .PHONY: all lint build run stop restart logs clean
 
-FORMATS		?= **/*.{html,css,js}
+FORMATS			?= **/*.{html,css,js}
 IMAGE_NAME   	?= mksmvnv
 SSL_PATH     	?= /etc/nginx/ssl
 
