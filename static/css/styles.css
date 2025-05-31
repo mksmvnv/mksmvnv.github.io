@@ -69,6 +69,14 @@ i:hover {
   gap: 1rem;
 }
 
+.tech-stack-loader {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
 .tech-tile {
   display: flex;
   flex-direction: column;
