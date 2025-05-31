@@ -10,6 +10,11 @@
         "alt": "fastapi"
     },
     {
+        "name": "Aiohttp",
+        "img": "media/aiohttp.png",
+        "alt": "aiohttp"
+    },
+    {
         "name": "Django",
         "img": "media/django.png",
         "alt": "django"
@@ -40,6 +45,11 @@
         "alt": "redis"
     },
     {
+        "name": "RabbitMQ",
+        "img": "media/rabbitmq.png",
+        "alt": "rabbitmq"
+    },
+    {
         "name": "Nginx",
         "img": "media/nginx.png",
         "alt": "nginx"
@@ -53,6 +63,16 @@
         "name": "CI/CD",
         "img": "media/cicd.png",
         "alt": "cicd"
+    },
+    {
+        "name": "Kubernetes",
+        "img": "media/kuber.png",
+        "alt": "kuber"
+    },
+    {
+        "name": "ArgoCD",
+        "img": "media/argocd.png",
+        "alt": "argocd"
     },
     {
         "name": "Git",
@@ -98,5 +118,10 @@
         "name": "Testing",
         "img": "media/pytest.png",
         "alt": "testing"
+    },
+    {
+        "name": "Grafana",
+        "img": "media/grafana.png",
+        "alt": "grafana"
     }
 ]
