@@ -10,11 +10,6 @@
         "alt": "fastapi"
     },
     {
-        "name": "Aiohttp",
-        "img": "media/aiohttp.png",
-        "alt": "aiohttp"
-    },
-    {
         "name": "Django",
         "img": "media/django.png",
         "alt": "django"
