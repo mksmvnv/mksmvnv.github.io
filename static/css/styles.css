@@ -35,9 +35,8 @@ h1 {
 /* Social media icons specific styling */
 .nav.justify-content-center .nav-link i {
   transition: 
-    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: color, transform;
+  will-change: transform;
   transform: translateZ(0); /* Force GPU acceleration */
   backface-visibility: hidden; /* Prevent flickering */
   display: inline-block; /* Ensure proper transform behavior */
@@ -46,14 +45,16 @@ h1 {
 .nav.justify-content-center .nav-link:hover i {
   color: var(--medium-gray) !important;
   transform: translateZ(0) scale(1.1);
+  transition: 
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Theme toggle icon */
 #theme-toggle i {
   transition: 
-    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: color, transform;
+  will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
   display: inline-block;
@@ -62,14 +63,16 @@ h1 {
 #theme-toggle:hover i {
   color: var(--medium-gray);
   transform: translateZ(0) scale(1.05);
+  transition: 
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* General icon transitions - excluding social media icons */
 i:not(.nav.justify-content-center .nav-link i):not(#theme-toggle i) {
   transition: 
-    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: color, transform;
+  will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
   display: inline-block;
@@ -78,6 +81,9 @@ i:not(.nav.justify-content-center .nav-link i):not(#theme-toggle i) {
 i:not(.nav.justify-content-center .nav-link i):not(#theme-toggle i):hover {
   color: var(--medium-gray);
   transform: translateZ(0) scale(1.05);
+  transition: 
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Toast Notis */
@@ -165,14 +171,54 @@ i:not(.nav.justify-content-center .nav-link i):not(#theme-toggle i):hover {
 
 [data-bs-theme="dark"] .nav.justify-content-center .nav-link:hover i {
   color: var(--light-gray) !important;
+  transition: 
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-bs-theme="dark"] #theme-toggle:hover i {
   color: var(--light-gray);
+  transition: 
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-bs-theme="dark"] i:not(.nav.justify-content-center .nav-link i):not(#theme-toggle i):hover {
   color: var(--light-gray);
+  transition: 
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fix for icon flickering during theme switch */
+/* Ensure immediate color changes for theme switching */
+[data-bs-theme="dark"] .nav.justify-content-center .nav-link i,
+[data-bs-theme="light"] .nav.justify-content-center .nav-link i {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Force immediate color changes for theme toggle icon */
+[data-bs-theme="dark"] #theme-toggle i,
+[data-bs-theme="light"] #theme-toggle i {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Additional fix for Chrome and Edge specific issues */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .nav.justify-content-center .nav-link i,
+  #theme-toggle i {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* Ensure proper color inheritance */
+.nav.justify-content-center .nav-link {
+  color: inherit !important;
+}
+
+.nav.justify-content-center .nav-link i {
+  color: inherit !important;
 }
 
 /* Mobile Tech Stack Grid */
