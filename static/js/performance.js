@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
   socialIcons.forEach(icon => {
     // Add passive event listeners for better performance
     icon.addEventListener('mouseenter', function() {
-      this.style.willChange = 'color, transform';
+      this.style.willChange = 'transform';
     }, { passive: true });
     
     icon.addEventListener('mouseleave', function() {
       // Reset will-change after animation to free up GPU memory
       setTimeout(() => {
         this.style.willChange = 'auto';
-      }, 300);
+      }, 200);
     }, { passive: true });
   });
 
