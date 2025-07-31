@@ -1,0 +1,47 @@
+/* Performance optimizations for animations */
+
+/* Force hardware acceleration for all animated elements */
+.nav-link,
+.tech-tile,
+#theme-toggle,
+.toast {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, color, opacity;
+}
+
+/* Optimize transitions for better performance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize for mobile devices */
+@media (max-width: 768px) {
+  .nav-link i,
+  #theme-toggle i {
+    transition-duration: 0.2s; /* Faster on mobile for better responsiveness */
+  }
+  
+  .tech-tile {
+    transition-duration: 0.2s;
+  }
+} 
