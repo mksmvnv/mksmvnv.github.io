@@ -19,8 +19,8 @@
 
 body {
   transition:
-    background-color 0.3s,
-    color 0.3s;
+    background-color 0.3s ease,
+    color 0.3s ease;
   font-family: "InconsolataRegular";
 }
 
@@ -30,14 +30,54 @@ h1 {
   font-size: 50px;
 }
 
-/* Icons */
+/* Icons - Improved animations with GPU acceleration */
 
-i {
-  transition: color 0.3s ease;
+/* Social media icons specific styling */
+.nav.justify-content-center .nav-link i {
+  transition: 
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: color, transform;
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
+  display: inline-block; /* Ensure proper transform behavior */
 }
 
-i:hover {
+.nav.justify-content-center .nav-link:hover i {
+  color: var(--medium-gray) !important;
+  transform: translateZ(0) scale(1.1);
+}
+
+/* Theme toggle icon */
+#theme-toggle i {
+  transition: 
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: color, transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  display: inline-block;
+}
+
+#theme-toggle:hover i {
   color: var(--medium-gray);
+  transform: translateZ(0) scale(1.05);
+}
+
+/* General icon transitions - excluding social media icons */
+i:not(.nav.justify-content-center .nav-link i):not(#theme-toggle i) {
+  transition: 
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: color, transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  display: inline-block;
+}
+
+i:not(.nav.justify-content-center .nav-link i):not(#theme-toggle i):hover {
+  color: var(--medium-gray);
+  transform: translateZ(0) scale(1.05);
 }
 
 /* Toast Notis */
@@ -45,20 +85,22 @@ i:hover {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(10px) translateZ(0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
   }
 }
 
 .toast {
-  animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
 }
 
 #copyText {
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: color, transform;
 }
 
 /* Tech Stack Grid */
@@ -84,17 +126,29 @@ i:hover {
   padding: 10px;
   border: 3px solid var(--ultra-light-gray);
   border-radius: 8px;
-  transition: transform 0.3s;
+  transition: 
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, border-color;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .tech-tile:hover {
-  transform: scale(1.05);
+  transform: translateZ(0) scale(1.05);
   border-color: var(--light-gray);
 }
 
 .tech-tile img {
   width: 100%;
   margin-bottom: 5px;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.tech-tile:hover img {
+  transform: translateZ(0) scale(1.02);
 }
 
 .tech-tile span {
@@ -109,7 +163,15 @@ i:hover {
   border-color: var(--medium-gray);
 }
 
-[data-bs-theme="dark"] i:hover {
+[data-bs-theme="dark"] .nav.justify-content-center .nav-link:hover i {
+  color: var(--light-gray) !important;
+}
+
+[data-bs-theme="dark"] #theme-toggle:hover i {
+  color: var(--light-gray);
+}
+
+[data-bs-theme="dark"] i:not(.nav.justify-content-center .nav-link i):not(#theme-toggle i):hover {
   color: var(--light-gray);
 }
 
