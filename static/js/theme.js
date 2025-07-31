@@ -5,6 +5,18 @@ const themeIcon = document.getElementById("theme-icon");
 const themeToggleBtn = document.getElementById("theme-toggle");
 
 function setTheme(themeName) {
+  // Temporarily disable transitions during theme switch to prevent flickering
+  const socialIcons = document.querySelectorAll('.nav.justify-content-center .nav-link i');
+  const themeToggleIcon = document.getElementById('theme-icon');
+  
+  // Disable transitions
+  socialIcons.forEach(icon => {
+    icon.style.transition = 'none';
+  });
+  if (themeToggleIcon) {
+    themeToggleIcon.style.transition = 'none';
+  }
+  
   // Use requestAnimationFrame for smoother theme transitions
   requestAnimationFrame(() => {
     htmlElement.setAttribute("data-bs-theme", themeName);
@@ -16,6 +28,16 @@ function setTheme(themeName) {
     } else {
       themeIcon.classList.replace("bi-moon", "bi-brightness-high");
     }
+    
+    // Re-enable transitions after a short delay
+    setTimeout(() => {
+      socialIcons.forEach(icon => {
+        icon.style.transition = '';
+      });
+      if (themeToggleIcon) {
+        themeToggleIcon.style.transition = '';
+      }
+    }, 50);
   });
 }
 
